@@ -4,7 +4,9 @@ import ptBR from "date-fns/locale/pt-BR"
 import styles from './styles.module.scss';
 
 export function Header() { 
-  const cureentDate = new Date().toLocaleDateString()
+  const cureentDate = format(new Date( ), "EEEEEE, d MMMM",{
+    locale: ptBR,
+  })
 
   return (
     <header className={styles.headerContainer}>
@@ -12,7 +14,8 @@ export function Header() {
 
       <p>O melhor para você ouvir, sempre</p>
 
-      <span>Qui, 8 abril</span>
+      
+      <span>{cureentDate}</span>
     </header>
   );
  }
